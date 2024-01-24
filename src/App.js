@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./App.css";
 
 function App() {
   const [name, setName] = useState("");
@@ -11,8 +12,9 @@ function App() {
       <h1>Pizza Order</h1>
       <form>
         <input
+          id="name"
           type="text"
-          onChange={() => setName(name)}
+          onChange={(e) => setName(e.target.value)}
           placeholder="name"
         ></input>
         <label>
@@ -47,9 +49,11 @@ function App() {
           ></input>
           Onions
         </label>
+        <button typeof="submit">submit</button>
       </form>
       <div>
         <h2>Your Order</h2>
+        <p>{name}</p>
         {peperoni && <div>Pepperoni</div>}
         {sausage && <div>Sausage</div>}
         {peppers && <div>Peppers</div>}
